@@ -1,22 +1,16 @@
-def dead_state(width, height):
+import random
+
+def random_state(width, height):
     board1 = []
     board2 = []
+    dead_alive = [0,1]
 
-    # For width
     for _ in range(width):
-        board1.append(0)
-
-
-    for _ in range(height):
+        value = random.choice(dead_alive)
+        board1.append(value)
         board2.append(board1)
 
     return board2
 
 
-    
-print(dead_state(2,2))
 
-    # [
-    # [0,0,0,0,0], 
-    # [0,0,0,0,0]
-    # ]

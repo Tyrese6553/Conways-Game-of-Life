@@ -14,3 +14,18 @@ def random_state(width, height):
 
     return board2
 
+
+def render(board):
+    print("-----------------------")
+
+    for sub in board:
+        # .join joins a list together with a separator in front
+        # It compacts the list elements together based on the separator
+        new_board = "".join(["#" if num == 1 else " " for num in sub])
+        print(new_board)
+
+    print("-----------------------")
+    
+
+
+

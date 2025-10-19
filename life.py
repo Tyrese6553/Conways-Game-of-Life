@@ -1,4 +1,26 @@
 import random
+import time
+import os
+import sys
+
+def main():
+    width = int(input("Enter the width: "))
+    height = int(input("Enter the height: "))
+
+    board = random_state(width, height)
+    render(board)
+    os.system("cls")
+    next_board = next_board_state(board, width, height)
+        
+    try:
+        while True:
+            render(next_board)
+            next_board = next_board_state(next_board, width, height)
+            time.sleep(0.4)
+            os.system("cls")
+    except KeyboardInterrupt:
+        sys.exit("Thanks for playing Game Of Life")
+
 
 def dead_state(width, height):
     return [[0 for _ in range(width)] for _ in range(height)]
@@ -14,33 +36,20 @@ def random_state(width, height):
             value = random.choice([0,1])
             board1.append(value)
         board2.append(board1)
-    return board2, width, height
+    return board2
 
 
 def render(board):
-    print("-----------------------")
     for sub in board:
         # .join joins a list together with a separator = ""
         # It compacts the list elements together based on the separator
-        new_board = "".join(["#" if num == 1 else " " for num in sub])
-        print(f"|{new_board}|")
-    print("-----------------------")
+        new_board = "".join(["🟢" if num == 1 else "🔴" for num in sub])
+        print(f"{new_board}")
     
 
 def next_board_state(init_board, width, height):
-    '''
-    **Used for testing**
-    init_board = [
-        [0,1,1],
-        [1,1,0],
-        [0,1,1]
-    ]
-    width = 3
-    height = 3
-    '''
     new_state = dead_state(width, height)
     
-
     for x in range(0, height):
         for y in range(0, width):
             # Initialises variable for each cell being checked
@@ -68,6 +77,8 @@ def next_board_state(init_board, width, height):
                     new_state[x][y] = 1
                 else:
                     new_state[x][y] = 0
-
     return new_state
                 
+                
+if __name__ == "__main__":
+    main()

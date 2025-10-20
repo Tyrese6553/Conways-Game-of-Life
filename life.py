@@ -26,7 +26,6 @@ def main():
             time.sleep(0.4)
             os.system("cls")
             generations += 1
-
     except KeyboardInterrupt:
         sys.exit(f"Thank you for playing Game Of Life. You have witnessed {generations} generations!")
 

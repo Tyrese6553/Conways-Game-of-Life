@@ -4,25 +4,35 @@ import os
 import sys
 
 def main():
-    width = int(input("Enter the width: "))
-    height = int(input("Enter the height: "))
+    print("Welcome to the Game of Life!\nTo stop the game, use control+C")
+    while True:
+        try:
+                width = int(input("Enter the width: "))
+                height = int(input("Enter the height: "))
+                break
+        except ValueError:
+            print("Please enter an integer")
 
     board = random_state(width, height)
     render(board)
     os.system("cls")
     next_board = next_board_state(board, width, height)
-        
+    generations = 0
+
     try:
         while True:
             render(next_board)
             next_board = next_board_state(next_board, width, height)
             time.sleep(0.4)
             os.system("cls")
+            generations += 1
+
     except KeyboardInterrupt:
-        sys.exit("Thanks for playing Game Of Life")
+        sys.exit(f"Thank you for playing Game Of Life. You have witnessed {generations} generations!")
 
 
 def dead_state(width, height):
+    # Creates a new object each time to prevent each list from being the same when changed
     return [[0 for _ in range(width)] for _ in range(height)]
 
 
@@ -44,7 +54,7 @@ def render(board):
         # .join joins a list together with a separator = ""
         # It compacts the list elements together based on the separator
         new_board = "".join(["🟢" if num == 1 else "🔴" for num in sub])
-        print(f"{new_board}")
+        print(new_board)
     
 
 def next_board_state(init_board, width, height):

@@ -17,7 +17,7 @@ def main():
     render(board)
     os.system("cls")
     next_board = next_board_state(board, width, height)
-    generations = 0
+    generations = 1
 
     try:
         while True:

@@ -21,11 +21,11 @@ def main():
 
     try:
         while True:
+            generations += 1
             render(next_board)
             next_board = next_board_state(next_board, width, height)
             time.sleep(0.4)
             os.system("cls")
-            generations += 1
     except KeyboardInterrupt:
         sys.exit(f"Thank you for playing Game Of Life. You have witnessed {generations} generations!")
 

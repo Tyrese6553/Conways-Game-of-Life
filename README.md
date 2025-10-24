@@ -4,6 +4,25 @@ This is the famous Game of Life program, where you can watch hundreds of generat
 
 If you want to create this program but need some guidance like myself, you can check out [Robert Heaton's blog](https://robertheaton.com/2018/07/20/project-2-game-of-life/), there are some good reads and advanced beginner guided projects.
 
+This is an example of the program:
+
+![example1](images\image2.png)
+
+
+## How to Download (Windows Only)
+
+I've packaged a simple version of this program into an executable file that can run on a Windows operating system.
+
+__Steps to Download__:
+
+1. At the top of this web page, locate and click on `GameOfLife.exe` in the list of files.
+2. There is a three-dot menu button at the top right, click on it and select the 'Download' option. Alternatively, you can use `Control + Shift + S` to automatically download the file.
+3. You can now run the application on your computer. Below is an example of this program:
+
+
+    ![example2](images\image1.png)
+
+
 ## How it Works
 
 * The user is asked for a width and a height. Together, these variables make up the board that is used. This is the only input that will be asked.

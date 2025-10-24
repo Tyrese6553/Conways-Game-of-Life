@@ -6,7 +6,7 @@ If you want to create this program but need some guidance like myself, you can c
 
 This is an example of the program:
 
-![example1](images\image2.png)
+![example1](images/image2.png)
 
 
 ## How to Download (Windows Only)
@@ -20,7 +20,7 @@ __Steps to Download__:
 3. You can now run the application on your computer. Below is an example of this program:
 
 
-    ![example2](images\image1.png)
+    ![example2](images/image1.png)
 
 
 ## How it Works
